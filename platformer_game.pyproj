@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{b908d652-aac4-491a-9229-e15a60d1bd15}</ProjectGuid>
+    <ProjectHome />
+    <StartupFile>platformer_game.py</StartupFile>
+    <SearchPath />
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <LaunchProvider>Standard Python launcher</LaunchProvider>
+    <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="BreakWall.py" />
+    <Compile Include="Character.py" />
+    <Compile Include="CharacterItems.py" />
+    <Compile Include="Checkpoint.py" />
+    <Compile Include="ClassFunctions.py" />
+    <Compile Include="Coin.py" />
+    <Compile Include="Crumble.py" />
+    <Compile Include="Enemy.py" />
+    <Compile Include="EnemyC.py" />
+    <Compile Include="EnemyT.py" />
+    <Compile Include="EnemyX.py" />
+    <Compile Include="EnemyY.py" />
+    <Compile Include="Fireball.py" />
+    <Compile Include="HealZone.py" />
+    <Compile Include="HiddenArea.py" />
+    <Compile Include="InstantDeathZone.py" />
+    <Compile Include="Item.py" />
+    <Compile Include="JumpPad.py" />
+    <Compile Include="Key.py" />
+    <Compile Include="KeyDoor.py" />
+    <Compile Include="Lava.py" />
+    <Compile Include="Level.py" />
+    <Compile Include="LevelFunctions.py" />
+    <Compile Include="LevelLists.py" />
+    <Compile Include="Levels.py" />
+    <Compile Include="Level_Ideas.py" />
+    <Compile Include="LineCannon.py" />
+    <Compile Include="LinkedWall.py" />
+    <Compile Include="Missile.py" />
+    <Compile Include="MovingPlatform.py" />
+    <Compile Include="platformer_game.py" />
+    <Compile Include="Portal.py" />
+    <Compile Include="ResetButton.py" />
+    <Compile Include="RoomSwitcher.py" />
+    <Compile Include="Saw.py" />
+    <Compile Include="Shield.py" />
+    <Compile Include="Slope.py" />
+    <Compile Include="Spike.py" />
+    <Compile Include="Switch.py" />
+    <Compile Include="Sword.py" />
+    <Compile Include="Track.py" />
+    <Compile Include="TrackMissile.py" />
+    <Compile Include="Trigger.py" />
+    <Compile Include="UpgradeItems.py" />
+    <Compile Include="WindZone.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Interpreter Include="env\">
+      <Id>env</Id>
+      <Version>3.10</Version>
+      <Description>env (Python 3.10 (64-bit))</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X64</Architecture>
+    </Interpreter>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+</Project>
