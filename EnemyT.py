@@ -21,17 +21,15 @@ class EnemyT(Enemy):
         return False
     def enemyCheck(self, pushBack, pushDirection, pushingEnemy, startEnemy, *, times = 1, enemiesHit = set()):
         enemiesHit.add(self)
-        for e in enemiesHit:
-            print(e)
+        #for e in enemiesHit:
+        #    print(e)
         if startEnemy == self and times != 1:
             self.shape.centerX = rounded(self.shape.centerX/2.5)*2.5
-            print("start")
             return
         a = 0
         while pushingEnemy.shape.right > self.shape.right > pushingEnemy.shape.left or pushingEnemy.shape.left < self.shape.left < pushingEnemy.shape.right:
             self.shape.centerX += pushBack * pushDirection
             self.shape.centerX = rounded(self.shape.centerX/2.5)*2.5
-            print("CenterX: " + str(self.shape.centerX) + ", times: " + str(times) + ", StartX: " + str(startEnemy.shape.centerX) + ", Pushes: " + str(a))
             a += 1
         if (
             (self.grounded and (not hitCheckAllOr(self.bottom)) and (not hitCheck(groundGroupList, self.bottom))) or
@@ -40,7 +38,6 @@ class EnemyT(Enemy):
         ):
             self.shape.centerX -= pushBack * pushDirection
             self.shape.centerX = rounded(self.shape.centerX/2.5)*2.5
-            print("CenterX: " + str(self.shape.centerX) + ", times: " + str(times) + ", StartX: " + str(startEnemy.shape.centerX) + ", WallHit")
             if ((pushDirection == 1 and hitCheck(enemyGroupList, self.left)) or (pushDirection == -1 and hitCheck(enemyGroupList, self.right))):
                 if pushDirection == -1:
                     e = hitFindNotObject(Enemy.enemyList, self, self.right)
@@ -49,14 +46,12 @@ class EnemyT(Enemy):
                 if e != None:
                     e.enemyCheck(pushBack, -pushDirection, self, self, times = times+1, enemiesHit = enemiesHit)
         elif ((pushDirection == 1 and hitCheck(enemyGroupList, self.right)) or (pushDirection == -1 and hitCheck(enemyGroupList, self.left))):
-            print("CenterX: " + str(self.shape.centerX) + ", times: " + str(times) + ", StartX: " + str(startEnemy.shape.centerX) + ", EnemyHit")
             if pushDirection == 1:
                 e = hitFindNotObject(Enemy.enemyList, self, self.right)
             else:
                 e = hitFindNotObject(Enemy.enemyList, self, self.left)
             if e != None:
                 e.enemyCheck(pushBack, pushDirection, self, startEnemy, times = times+1, enemiesHit = enemiesHit)
-        print("end")
     def move(self):
         if self.health > 0:
             if self.invTime <= 0:

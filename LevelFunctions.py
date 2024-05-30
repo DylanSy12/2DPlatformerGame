@@ -139,7 +139,7 @@ def level9():
             i.switched = False
     goalCheck()
 def level10():
-    print("New Step")
+    #print("New Step")
     for i in currentGroup(Portal.portalList):
         i.teleport()
     for i in currentGroup(HiddenArea.hiddenAreaList):
@@ -159,7 +159,7 @@ def level10():
         a = 1
         for i in currentGroup(EnemyT.enemyTList):
             if 315 <= i.shape.centerY:
-                print("New Enemy" + str(a))
+                #print("New Enemy" + str(a))
                 a += 1
                 i.move()
                 if i.health > 0 and i.invTime > 0:
